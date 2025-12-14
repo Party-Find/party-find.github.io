@@ -1,0 +1,248 @@
+/* Grundlegendes Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hauptinhalt Styling */
+.hauptinhalt {
+    padding: 40px 20px;
+    transition: transform 0.4s ease;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.untertitel {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.inhalt-karte {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #667eea;
+}
+
+.inhalt-karte h2 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.inhalt-karte ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.inhalt-karte li {
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.code-hinweis {
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+code {
+    background: #2d3748;
+    color: #81e6d9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Menü Toggle Button (Hamburger Icon) */
+.menue-toggle {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.menue-toggle:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* Seitliches Menü - Standard geschlossen */
+.seiten-menue {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Menü ist links versteckt */
+    width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Sanfte Animation */
+    overflow-y: auto;
+}
+
+/* Menü wenn geöffnet */
+.seiten-menue.offen {
+    left: 0; /* Menü schiebt sich herein */
+}
+
+.schliessen-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.schliessen-btn:hover {
+    color: #e53e3e;
+}
+
+.menue-inhalt {
+    padding: 60px 30px 30px;
+}
+
+.menue-inhalt h2 {
+    color: #2d3748;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.menue-liste {
+    list-style: none;
+}
+
+.menue-liste li {
+    margin-bottom: 10px;
+}
+
+.menue-liste a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.menue-liste a:hover {
+    background: #edf2f7;
+    color: #667eea;
+    transform: translateX(5px);
+}
+
+.menue-liste i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.menue-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #718096;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Overlay wenn Menü geöffnet ist */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.overlay.sichtbar {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Wenn Menü offen ist, Hauptinhalt leicht verschieben */
+.menue-offen .hauptinhalt {
+    transform: translateX(160px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .seiten-menue {
+        width: 280px;
+        left: -280px;
+    }
+    
+    .menue-toggle {
+        top: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}

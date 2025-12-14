@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website mit Stil-Menü</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menü-Toggle Button (Hamburger) -->
+    <button id="menueToggle" class="menue-toggle" aria-label="Menü öffnen">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Seitliches Menü -->
+    <nav id="seitenMenue" class="seiten-menue">
+        <button class="schliessen-btn" aria-label="Menü schließen">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="menue-inhalt">
+            <h2>Navigation</h2>
+            <ul class="menue-liste">
+                <li><a href="#"><i class="fas fa-home"></i> Startseite</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Über uns</a></li>
+                <li><a href="#"><i class="fas fa-image"></i> Galerie</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Einstellungen</a></li>
+            </ul>
+            <div class="menue-footer">
+                <p>© 2023 Deine Website</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hauptinhalt der Seite -->
+    <main class="hauptinhalt">
+        <div class="container">
+            <h1>Willkommen auf meiner Website</h1>
+            <p class="untertitel">Klicke auf das Menü-Symbol oben links, um das stylische Menü zu öffnen.</p>
+            
+            <div class="inhalt-karte">
+                <h2><i class="fas fa-star"></i> Das Besondere an diesem Menü</h2>
+                <ul>
+                    <li>Öffnet sich <strong>sanft seitlich</strong> mit einer 0.4s Animation</li>
+                    <li>Moderne <strong>Glassmorphism</strong> Design-Effekte</li>
+                    <li>Vollständig <strong>responsive</strong> für alle Geräte</li>
+                    <li>Schließt bei Klick außerhalb oder auf "X"</li>
+                </ul>
+                <p>Das Menü ist perfekt für Navigation, Links oder Einstellungen.</p>
+            </div>
+
+            <div class="inhalt-karte">
+                <h2><i class="fas fa-code"></i> So nutzt du es</h2>
+                <p>Lade alle Dateien auf GitHub Pages hoch. Der Code ist fertig und funktioniert sofort.</p>
+                <div class="code-hinweis">
+                    <p><strong>Repository-Name für GitHub Pages:</strong><br>
+                    <code>deinusername.github.io</code></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay wenn Menü geöffnet ist -->
+    <div id="overlay" class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
