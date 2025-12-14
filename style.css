@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Hero-Bereich (Startseite mit Hintergrund) */
+.hero {
+    position: relative;
+    height: 100vh; /* Vollbildhöhe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* HINTERGRUNDBILD - WICHTIG: Ersetze die URL! */
+.hero {
+    background-image: url('hintergrund.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dunkler Overlay über dem Bild für bessere Lesbarkeit */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dunkler Filter */
+    z-index: 1;
+}
+
+/* Text-Container mit dunkelgrauem Hintergrund */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Über dem Overlay */
+    background-color: rgba(40, 40, 40, 0.85); /* Dunkelgrau mit Transparenz */
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 20px;
+    backdrop-filter: blur(5px); /* Leichter Weichzeichner für Glass-Effekt */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Dicke, weiße Hauptüberschrift */
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Untertitel */
+.hero-subtitle {
+    display: block;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #f0f0f0;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Restlicher Seiteninhalt */
+.main-content {
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content {
+        padding: 2rem;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+    }
+}
